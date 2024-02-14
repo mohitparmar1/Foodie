@@ -1,2 +1,2 @@
-# FindStays
-FindStays is a MERN webiste.
+# Foodie
+Foodie is a MERN webiste.
