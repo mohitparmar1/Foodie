@@ -9,7 +9,7 @@ const Header = () => {
                 <Link
 
                     className="text-3xl font-bold tracking-tight text-orange-500" to="/">Foodie</Link>
-                <div className="md:hidden">
+                <div className="md:hidden lg:hidden">
                     <MobileNav />
                 </div>
                 <MainNav />
