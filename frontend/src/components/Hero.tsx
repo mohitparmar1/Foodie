@@ -7,8 +7,12 @@ const Hero = () => {
             <img src={Pizza} className="
             w-full max-h-[600px] object-cover object-cover" alt="hero image
             "/>
-            <div className="absolute top-20 left-20 text-lg flex flex-col font-bold text-orange-500 gap-2">
-                <span className="text-3xl">Indulge Your <span className="bg-orange-500 text-white py-2 px-2 rounded-lg">Cravings,</span></span>
+            <div className="absolute top-20 left-20 text-lg flex flex-col font-bold 
+            bg-gradient-to-r from-orange-400
+         to-orange-600
+            text-transparent bg-clip-text
+            gap-5">
+                <span className="text-3xl  flex gap-2 flex-col">Indulge Your Cravings,</span>
                 <span className="text-2xl">Anytime, Anywhere</span>
             </div>
         </div>

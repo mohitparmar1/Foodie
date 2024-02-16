@@ -10,9 +10,6 @@ const HomePage = () => {
                     Tuck into a takeway today
                 </h1>
                 <span className="text-xl text-center">Food is just a click away!</span>
-                <div>
-                    <img src="Search" />
-                </div>
             </div>
             <div
                 className="grid
