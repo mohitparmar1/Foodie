@@ -12,7 +12,7 @@ const UsernameMenu = () => {
     return (
         <DropdownMenu >
             <DropdownMenuTrigger
-                className="hidden items-center px-3 font-bold md:flex lg:flex xl:hidden hover:text-orange-600">
+                className="hidden items-center px-3 font-bold md:flex lg:flex xl:flex hover:text-orange-600">
                 <CircleUserIcon
                     className="text-orange-500"
                 />
