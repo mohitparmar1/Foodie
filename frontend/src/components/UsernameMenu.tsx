@@ -13,9 +13,12 @@ const UsernameMenu = () => {
         <DropdownMenu >
             <DropdownMenuTrigger
                 className="hidden items-center px-3 font-bold md:flex lg:flex xl:flex hover:text-orange-600">
-                <CircleUserIcon
-                    className="text-orange-500"
-                />
+                {
+                    user?.picture ? (<img src={user?.picture} alt="user" className="w-8 h-8 rounded-full mx-2" />) : (<CircleUserIcon
+                        className="text-orange-500"
+                    />)
+                }
+
                 <span
                     className="text-sm"
                 >{user?.email}</span>
