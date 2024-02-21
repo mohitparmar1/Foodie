@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { User } from "@/types";
+import { useEffect } from "react";
 
 const FormSchema = z.object({
     email: z.string().optional(),
@@ -17,16 +19,20 @@ const FormSchema = z.object({
 type UserFormData = z.infer<typeof FormSchema>; // z.infer extracts the type from a zod schema and creates a new type for userFormData
 
 type Props = {
+    currentUser: User
     onSave: (UserProfileData: UserFormData) => void;
     isLoading: boolean;
 }
 
 
 
-const UserProfileForm = ({ onSave, isLoading }: Props) => {
+const UserProfileForm = ({ onSave, isLoading, currentUser }: Props) => {
     const form = useForm<UserFormData>(
         { resolver: zodResolver(FormSchema), }
     );
+    useEffect(() => {
+        form.reset(currentUser)
+    }, [currentUser, form])
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSave)} className="space-y-3">
@@ -69,7 +75,6 @@ const UserProfileForm = ({ onSave, isLoading }: Props) => {
                             <FormControl>
                                 <Input
                                     {...field}
-
                                     className="bg-white"
                                 />
                             </FormControl>
