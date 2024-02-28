@@ -4,6 +4,7 @@ import "dotenv/config";
 import mongoose from 'mongoose';
 import { v2 as cloudinary } from "cloudinary";
 import MyUserRoutes from "./routes/MyUserRoute"
+import MyRestaurantRoute from "./routes/MyRestaurantRoute"
 
 
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string)
@@ -12,7 +13,7 @@ mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string)
     })
 
 cloudinary.config({
-    cloud_name : process.env.CLOUDINARY_CLOUD_NAME,
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
     api_key: process.env.CLOUDINARY_API_KEY,
     api_secret: process.env.CLOUDINARY_API_SECRET
 })
@@ -27,6 +28,7 @@ app.get("/", (req: Request, res: Response) => {
 })
 
 app.use("/api/my/user", MyUserRoutes);
+app.use("/api/my/restaurant", MyRestaurantRoute);
 
 app.listen(7000, () => {
     console.log("Server is running on localhost:7000");
