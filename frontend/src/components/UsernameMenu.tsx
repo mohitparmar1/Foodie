@@ -24,7 +24,12 @@ const UsernameMenu = () => {
                 >{user?.email}</span>
             </DropdownMenuTrigger>
             <DropdownMenuContent
-                className="bg-white border border-gray-200 rounded-md p-2 space-y-3 w-32 h-32 flex flex-col text-center z-10">
+                className="bg-white border border-gray-200 rounded-md p-2 space-y-3 w-52 h-32 flex flex-col text-center z-10">
+                <DropdownMenuItem>
+                    <Link
+                        className="font-bold hover:text-orange-500 hover:bg-white"
+                        to="/manage-restaurant">Manage Restaurant</Link>
+                </DropdownMenuItem>
                 <DropdownMenuItem>
                     <Link
                         className="font-bold hover:text-orange-500 hover:bg-white"
