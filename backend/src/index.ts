@@ -23,7 +23,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req: Request, res: Response) => {
+app.get("/health", (req: Request, res: Response) => {
     res.send({ message: "Health OK" });
 })
 
